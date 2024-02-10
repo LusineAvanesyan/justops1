@@ -46,4 +46,4 @@ build {
       "--extra-vars", "postgres_root_pass='${var.postgres_root_pass}'",
     "-vvv"]
   }
-}
+}  
