@@ -8,7 +8,6 @@ packer {
 }
 
 variable "postgres_root_user" {}
-
 variable "postgres_root_pass" {}
 
 source "amazon-ebs" "ubuntu" {
@@ -37,7 +36,7 @@ build {
     "source.amazon-ebs.ubuntu"
   ]
   provisioner "ansible" {
-    playbook_file = "./ansible/db-setup.yml"
+    playbook_file = "../ansible/db-setup.yml"
     user          = "ubuntu"
     use_proxy     = "false"
     extra_arguments = [
@@ -46,4 +45,4 @@ build {
       "--extra-vars", "postgres_root_pass='${var.postgres_root_pass}'",
     "-vvv"]
   }
-}  
+}
