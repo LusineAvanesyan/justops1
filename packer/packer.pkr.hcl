@@ -37,7 +37,7 @@ build {
     "source.amazon-ebs.ubuntu"
   ]
   provisioner "ansible" {
-    playbook_file = "./ansible/db-setup.yml"
+    playbook_file = "../ansible/db-setup.yml"
     user          = "ubuntu"
     use_proxy     = "false"
     extra_arguments = [
