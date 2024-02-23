@@ -39,8 +39,8 @@ jobs:
 
       - name: Run Packer
         run: |
-          echo "AMI Unique Name: ${{ steps.last_tag.outputs.tag }}" 
-          packer build -var 'ami_unique_name=${{ steps.last_tag.outputs.tag }}' -var 'postgres_root_user=${{ secrets.POSTGRES_ROOT_USER }}' -var 'postgres_root_pass=${{ secrets.POSTGRES_ROOT_PASS }}' packer.pkr.hcl
+          echo "AMI Unique Name: ${{ steps.date.outputs.date }}" 
+          packer build -var 'ami_unique_name=${{ steps.date.outputs.date }}' -var 'postgres_root_user=${{ secrets.POSTGRES_ROOT_USER }}' -var 'postgres_root_pass=${{ secrets.POSTGRES_ROOT_PASS }}' packer.pkr.hcl
 
 
     #   - name: Generate variable file
