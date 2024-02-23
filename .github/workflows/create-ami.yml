@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Set up Packer
         run: |
@@ -36,7 +36,7 @@ jobs:
           aws-region: us-east-1
 
       - name: Run Packer
-        run: packer build -var 'postgres_root_user=${{ secrets.POSTGRES_ROOT_USER }}' -var 'postgres_root_pass=${{ secrets.POSTGRES_ROOT_PASS }}' packer/packer.pkr.hcl
+        run: packer build -var 'postgres_root_user=${{ secrets.POSTGRES_ROOT_USER }}' -var 'postgres_root_pass=${{ secrets.POSTGRES_ROOT_PASS }}' packer.pkr.hcl
 
 
     #   - name: Generate variable file
