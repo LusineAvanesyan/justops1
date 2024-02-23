@@ -14,10 +14,13 @@ on:
 jobs:
   build-ami:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./packer
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Packer
         run: |
