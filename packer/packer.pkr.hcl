@@ -12,7 +12,7 @@ variable "postgres_root_user" {}
 variable "postgres_root_pass" {}
 
 source "amazon-ebs" "ubuntu" {
-  ami_name      = "'${var.ami_unique_name}'"
+  ami_name      = "${var.ami_unique_name}"
   instance_type = "t2.micro"
   region        = "us-west-2"
   profile       = "412999873787"
@@ -26,13 +26,13 @@ source "amazon-ebs" "ubuntu" {
     owners      = ["099720109477"]
   }
   tags = {
-    Name = "'${var.ami_unique_name}'"
+    Name = "${var.ami_unique_name}"
   }
   ssh_username = "ubuntu"
 }
 
 build {
-  name = "'${var.ami_unique_name}'"
+  name = "${var.ami_unique_name}"
   sources = [
     "source.amazon-ebs.ubuntu"
   ]
