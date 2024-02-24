@@ -42,6 +42,7 @@ build {
     use_proxy     = "false"
     extra_arguments = [
       "--extra-vars", "ssh_extra_args='-oHostKeyAlgorithms=ssh-rsa'",
+      "--extra-vars", "ami_unique_name='${var.ami_unique_name}'",
       "--extra-vars", "postgres_root_user='${var.postgres_root_user}'",
       "--extra-vars", "postgres_root_pass='${var.postgres_root_pass}'",
     "-vvv"]
